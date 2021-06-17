@@ -12,6 +12,10 @@
 
 * 4-puts.c: C program that prints <a statement> follwed by a new line
 
-* 5-printf.c: C program that prints <a statement> with ```printf``` 
+* 5-printf.c: C program that prints <a statement> with ```printf```
 
 * 6-size.c: C program that prints size of various types.
+
+* 100-intel generates assembly code in intel syntax
+
+* 101-quote.c: prints <a statement> without using NAME in man of printf or puts
