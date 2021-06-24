@@ -2,6 +2,7 @@
 /**
  * print_last_digit - prints last digit of integer.
  * @a: type integer.
+ *
  *Return: the value of the last digit.
  */
 
