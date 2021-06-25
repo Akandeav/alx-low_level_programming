@@ -1,16 +1,14 @@
 #include "holberton.h"
+
 /**
- * print_line - print line with given length.
- * @n: line length
+ * print_line - print a line n characters long
+ * @n: the length of the line
+ *
+ * Return: void
  */
 void print_line(int n)
 {
-	int i;
-
-	if (n >= 0)
-	{
-		for (i = n; i < n; i++)
-			_putchar('_');
-	}
+	while (n-- > 0)
+		_putchar('_');
 	_putchar('\n');
 }
