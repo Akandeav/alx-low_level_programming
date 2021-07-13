@@ -1,40 +1,42 @@
-#include "holberton.h"
+#include <stdio.h>
 #include <stdlib.h>
-
 /**
- * argstostr - concatenates all the arguments of your program.
- * @ac: number of arguments
- * @av: double pointer to arguments
- *
- * Return:pointer to new string, or NULL if error
+ * argstostr - concatenates all arguments of your program.
+ * @ac: arguments count.
+ * @av: arguments vector.
+ * Return: pointer to new string or NULL if failed.
  */
 char *argstostr(int ac, char **av)
 {
-	int i, j, k = 0, n = 0;
-	char *s;
+	int i, j, c, size = 0;
+	char *p;
 
-	if (ac <= 0 || av == NULL)
+	if (ac == 0 || av == NULL)
 		return (NULL);
 	for (i = 0; i < ac; i++)
 	{
-		for (j = 0; av[i][j]; j++)
-			n++;
-		n++;
-	}
-	n++;
-	s = malloc(n * sizeof(char));
-	if (s == NULL)
-		return (NULL);
-	for (i = 0; i < ac; i++)
-	{
-		for (j = 0; av[i][j]; j++)
+		for (j = 0; av[i][j] != '\0'; j++)
 		{
-			s[k] = av[i][j];
-			k++;
+			size++;
 		}
-		s[k] = '\n';
-		k++;
 	}
-	s[k] = '\0';
-	return (s);
+	p = malloc(sizeof(char) * size + 1 + ac);
+	if (p == NULL)
+	{
+		free(p);
+		return (NULL);
+	}
+	c = 0;
+	for (i = 0; i < ac; i++)
+	{
+		for (j = 0; av[i][j] != '\0'; j++)
+		{
+			p[c] = av[i][j];
+			c++;
+		}
+		p[c] = '\n';
+		c++;
+	}
+	p[size + size] = '\0';
+	return (p);
 }
